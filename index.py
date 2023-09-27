@@ -14,7 +14,8 @@ openai.api_base = os.getenv("OPENAI_API_BASE")  # 指定代理地址
 import openai
 
 response =openai.ChatCompletion.create(
-  model="gpt-3.5-turbo",
+  model="gpt-4",
+  # model="gpt-3.5-turbo",
   messages=[
         {"role": "system", "content": "你是一个精通Python语言的编程专家。"},
         {"role": "user", "content": "Python有什么特点?"}
