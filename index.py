@@ -1,34 +1,26 @@
 import os
-import openai
+from openai import OpenAI
 
 # 加载 .env 到环境变量
 from dotenv import load_dotenv, find_dotenv
-
 _ = load_dotenv(find_dotenv())
 
-# print(find_dotenv())
 # 配置 OpenAI 服务
-# openai.api_key = os.getenv("OPENAI_API_KEY")  # 设置 OpenAI 的 key
-# openai.api_base = os.getenv("OPENAI_BASE_URL")  # 指定代理地址
 
-import openai
+client = OpenAI(
+    # defaults to os.environ.get("OPENAI_API_KEY")
+    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url=os.getenv("OPENAI_BASE_URL")
+)
 
-response =openai.ChatCompletion.create(
-  model="gpt-4",
-  # model="gpt-3.5-turbo",
-  messages=[
-        {"role": "system", "content": "你是一个精通Python语言的编程专家。"},
-        {"role": "user", "content": "Python有什么特点?"}
+response = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Say this is a test",
+        }
     ],
-  temperature=0
+    model="gpt-3.5-turbo",
 )
 
 print(response)
-# print(response['choices'][0]['message']['content'])
-
-
-
-
-
-
-
