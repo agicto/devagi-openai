@@ -20,7 +20,7 @@ mv .env.example .env
 
 ```
 OPENAI_API_KEY="sk-KJaw8tpNf1lu3********************q3PcwLUPNZOVXIe7"
-OPENAI_API_BASE="https://api.fe8.cn/v1"
+OPENAI_BASE_URL="https://api.fe8.cn/v1"
 ```
 
 #### 第四步：运行`index.py`代码
