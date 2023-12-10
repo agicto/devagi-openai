@@ -8,8 +8,8 @@ _ = load_dotenv(find_dotenv())
 
 # print(find_dotenv())
 # 配置 OpenAI 服务
-openai.api_key = os.getenv("OPENAI_API_KEY")  # 设置 OpenAI 的 key
-openai.api_base = os.getenv("OPENAI_API_BASE")  # 指定代理地址
+# openai.api_key = os.getenv("OPENAI_API_KEY")  # 设置 OpenAI 的 key
+# openai.api_base = os.getenv("OPENAI_BASE_URL")  # 指定代理地址
 
 import openai
 
